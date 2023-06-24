@@ -28,14 +28,14 @@ const Home = () => {
   return (
     <div>
       {/* using row from ant-design to make it responsive */}
-      <Row
+      <Row gutter={24}
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <Col span={8}>
+        <Col span={12}>
           {/* creating the input tag to get the user input data */}
           <Input
             className="input"
@@ -66,7 +66,7 @@ const Home = () => {
                   style={{
                     marginRight: "5px",
                     marginTop: "10px",
-                    height: "25px",
+                    height: "25",
                     width: "25px",
                     borderRadius: "50%",
                     justifyContent: "center",
@@ -75,7 +75,7 @@ const Home = () => {
                     backgroundColor: "black",
                     color: "white",
                     fontSize: "13px",
-                    fontWeight: "lighter",
+                    padding: "18px",
                   }}
                 >
                   <div className="card">
