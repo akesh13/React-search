@@ -61,10 +61,26 @@ const Home = () => {
               data // mapping the data stored in the state
             ) => (
               <Col className="card_parent" key={data.id}>
-                <Badge className="badge" color="pink" count={data.id}>
+                <Badge
+                  count={data.id}
+                  style={{
+                    marginRight: "5px",
+                    marginTop: "10px",
+                    height: "25px",
+                    width: "25px",
+                    borderRadius: "50%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    display: "flex",
+                    backgroundColor: "black",
+                    color: "white",
+                    fontSize: "13px",
+                    fontWeight: "lighter",
+                  }}
+                >
                   <div className="card">
                     <Image
-                    //   preview={false}
+                      preview={false}
                       className="image"
                       src={data.avatar}
                     />

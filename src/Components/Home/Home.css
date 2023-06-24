@@ -21,3 +21,18 @@
   padding: 15px;
   border: 2px solid black;
 }
+
+.badge{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 10px;
+margin-right: 5px;
+height: 25px;
+width: 25px;
+border-radius: 50%;
+background-color: black;
+color: aliceblue;
+font-size:15px ;
+font-weight: inherit;
+}
