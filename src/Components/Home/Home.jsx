@@ -45,6 +45,7 @@ const Home = () => {
           />
         </Col>
       </Row>
+
       <Row
         style={{
           display: "flex",
@@ -63,7 +64,7 @@ const Home = () => {
                 <Badge className="badge" color="pink" count={data.id}>
                   <div className="card">
                     <Image
-                      preview={false}
+                    //   preview={false}
                       className="image"
                       src={data.avatar}
                     />
