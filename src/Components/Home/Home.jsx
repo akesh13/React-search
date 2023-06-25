@@ -25,10 +25,14 @@ const Home = () => {
     };
     apiCall();
   }, []);
+
+  const filteredData = () => {};
+
   return (
     <div>
       {/* using row from ant-design to make it responsive */}
-      <Row gutter={24}
+      <Row
+        gutter={24}
         style={{
           display: "flex",
           justifyContent: "center",
@@ -46,51 +50,64 @@ const Home = () => {
         </Col>
       </Row>
 
-      <Row
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: "50px",
-        }}
-      >
-        {apiData
-          .filter((data) => data.first_name.toLowerCase().includes(search)) //  performing logic for the search
-          .map(
-            (
-              data // mapping the data stored in the state
-            ) => (
-              <Col className="card_parent" key={data.id}>
-                <Badge
-                  count={data.id}
-                  style={{
-                    marginRight: "5px",
-                    marginTop: "10px",
-                    height: "25",
-                    width: "25px",
-                    borderRadius: "50%",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    display: "flex",
-                    backgroundColor: "black",
-                    color: "white",
-                    fontSize: "13px",
-                    padding: "18px",
-                  }}
-                >
-                  <div className="card">
-                    <Image
-                      preview={false}
-                      className="image"
-                      src={data.avatar}
-                    />
-                    <p>{data.first_name}</p>
-                  </div>
-                </Badge>
-              </Col>
-            )
-          )}
-      </Row>
+      {apiData.length > 0 &&
+      apiData.filter((data) =>
+        data.first_name.toLowerCase().includes(search.toLowerCase())
+      ).length === 0 ? (
+        <Row gutter={24}>
+          <Col span={8} offset={8}>
+            <p className="not_found">User not found</p>
+          </Col>
+        </Row>
+      ) : (
+        <Row
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "50px",
+          }}
+        >
+          {apiData
+            .filter((data) =>
+              data.first_name.toLowerCase().includes(search.toLowerCase())
+            ) //  performing logic for the search
+            .map(
+              (
+                data // mapping the data stored in the state
+              ) => (
+                <Col className="card_parent" key={data.id}>
+                  <Badge
+                    count={data.id}
+                    style={{
+                      marginRight: "5px",
+                      marginTop: "10px",
+                      height: "25",
+                      width: "25px",
+                      borderRadius: "50%",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      display: "flex",
+                      backgroundColor: "black",
+                      color: "white",
+                      fontSize: "13px",
+                      padding: "18px",
+                    }}
+                  >
+                    <div className="card">
+                      <Image
+                        preview={false}
+                        className="image"
+                        src={data.avatar}
+                      />
+                      <p>{data.first_name}</p>
+                    </div>
+                  </Badge>
+                </Col>
+              )
+            )}
+        </Row>
+      )}
     </div>
   );
 };
