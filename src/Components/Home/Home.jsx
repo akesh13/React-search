@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Image, Badge, Input, Row, Col } from "antd";
 import "./Home.css";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const Home = () => {
   // initializing state for storing data from the api
@@ -25,8 +26,6 @@ const Home = () => {
     };
     apiCall();
   }, []);
-
-  const filteredData = () => {};
 
   return (
     <div>
@@ -56,7 +55,9 @@ const Home = () => {
       ).length === 0 ? (
         <Row gutter={24}>
           <Col span={8} offset={8}>
-            <p className="not_found">User not found</p>
+            <p className="not_found">
+              User not found <AiOutlineCloseCircle className="ip_icn" />{" "}
+            </p>
           </Col>
         </Row>
       ) : (
