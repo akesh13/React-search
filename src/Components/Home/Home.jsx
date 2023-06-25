@@ -54,9 +54,13 @@ const Home = () => {
         data.first_name.toLowerCase().includes(search.toLowerCase())
       ).length === 0 ? (
         <Row gutter={24}>
-          <Col span={8} offset={8}>
+          <Col
+            span={8}
+            offset={8}
+            style={{ display: "flex", justifyContent: "center" }}
+          >
             <p className="not_found">
-              User not found <AiOutlineCloseCircle className="ip_icn" />{" "}
+              User not found <AiOutlineCloseCircle className="ip_icn" />
             </p>
           </Col>
         </Row>

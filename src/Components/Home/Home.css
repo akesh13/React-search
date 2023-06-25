@@ -50,6 +50,7 @@
   border-radius: 20px;
   background-color: rgb(255, 211, 211);
   color: rgb(0, 0, 0);
+  max-width: 150px;
 }
 
 .ip_icn {
